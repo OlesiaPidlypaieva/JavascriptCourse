@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>  
+</head>
+<style>
+   table, td {
+      border: 2px solid black;
+   }
+</style>
+<body>
+   <h1>Home Task 2</h1>
+   <h2>Задача 0. Обчислити значення виразів</h2>
+   <script>
+      let a = parseFloat(prompt('Please, enter the number of a...' , '0'))
+      let b = parseFloat(prompt('Please, enter the number of b...' , '0'))
+      let c = parseFloat(prompt('Please, enter the number of c...' , '0'))
+      let S1 = a+12+b
+      let S2 = Math.sqrt((a+b)/(2*a)).toFixed(2)
+      let S3 = Math.cbrt((a+b)*c).toFixed(2)
+      let S4 = Math.sin(a/(-b)).toFixed(2)
+      document.write(`S1 = ${S1} <br> S2 = ${S2} <br> S3 = ${S3} <br> S4 = ${S4}`)
+   </script>
+   <h2> Задача 1. Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці</h2>
+   <script>
+      let sum = a+b
+      let multipl = a*b
+      let fraction = a/b    
+      document.write(`<table>
+      <tr><td>Завдання</td><td>Результат</td></tr>
+      <tr><td>a+b</td><td>${sum}</td></tr>
+      <tr><td>a*b</td><td>${multipl}</td></tr>
+      <tr><td>a/b</td><td>${fraction}</td></tr>
+   </table>`)
+   </script>
+   <h2>Задача 2. Дано рік народження (дата: 1 січня) та поточний рік. Знайти кількість років.</h2>
+   <script>
+      let currentYear = new Date().getFullYear()
+      let yearOfBirth = parseInt(prompt('Please, the year of your birth...' , '0'))
+      let currentAge = currentYear - yearOfBirth
+      document.write(`Congrat's! You are ${currentAge}! You are so young!`)
+   </script>
+   <h2>Задача 3. Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної вартості).
+   </h2>
+   <script>
+      let quantityOfGoods = parseFloat(prompt('Please, enter the quantity of goods...' , '0'))
+      let priceOfGoods = 350
+      let valueOfGoods = quantityOfGoods*priceOfGoods
+      let VAT = valueOfGoods*0.05
+      document.write(`The value of this goods is ${valueOfGoods} $, including VAT - ${VAT}$`)
+   </script>
+   <h2>Задача 4. Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.</h2>
+   <script>
+      let lenthInCentim = parseFloat(prompt('Please, enter the lenth in centimeters...' , '0'))
+      let lenthInMeters = lenthInCentim/100
+      let lenthInKilom = lenthInMeters/1000
+      document.write(`The lenth in centimeters is ${lenthInCentim}, this lenth in meters - ${lenthInMeters}, or ${lenthInKilom}km`)
+   </script>
+   <h2>Задача 5. Дано кількість секунд, що пройшла від початку доби. Визначити скільки це годин і хвилин.</h2>
+   <script>
+      let secondsInMinute = 60
+      let secondsInHour = 3600
+      let secondsPassed = parseFloat(prompt('Please, enter the seconds have passed...' , '0'))
+      let hoursPassed = Math.floor(secondsPassed/secondsInHour)
+      let minutesPassed = ((secondsPassed%secondsInHour)/secondsInMinute).toFixed(0)
+      document.write(`Today ${hoursPassed} hours and ${minutesPassed} minutes have passed`)
+      </script>
+   <h2>Задача 6. З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. <br> Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.</h2>
+   <script>
+      let breadQuantity = parseFloat(prompt('Please, enter the quantity of bread...'))
+      let breadPrice = parseFloat(prompt('Please, enter the price of bread...'))
+      let potatoQuantity = parseFloat(prompt('Please, enter the quantity of potato...'))
+      let potatoPrice = parseFloat(prompt('Please, enter the price of potato...'))
+      let appleQuantity = parseFloat(prompt('Please, enter the quantity of apple...'))
+      let applePrice = parseFloat(prompt('Please, enter the price of apple...'))
+      let breadValue = breadQuantity*breadPrice
+      let potatoValue = potatoQuantity*potatoPrice
+      let appleValue = appleQuantity*applePrice
+      let totalValue = breadValue+potatoValue+appleValue
+      document.write(`<table>
+      <tr><td>Item</td><td>Quantity</td><td>Price</td><td>Value</td></tr>
+      <tr><td>Bread</td><td>${breadQuantity}</td><td>${breadPrice}</td><td>${breadValue}</td></tr>
+      <tr><td>Potato</td><td>${potatoQuantity}</td><td>${potatoPrice}</td><td>${potatoValue}</td></tr>
+      <tr><td>Apple</td><td>${appleQuantity}</td><td>${applePrice}</td><td>${appleValue}</td></tr>
+      <tr><td>Total</td><td>-</td><td>-</td><td>${totalValue}</td></tr>
+   </table>`)
+   </script>
+   <h2>Задача 7. Знайти суму випадкового номера місяця (від 1 до 12) та випадкового номера дня (від 0 до 6).
+   </h2>
+   <script>
+      let minMonth = 1
+      let maxMonth = 12
+      let minDay = 0
+      let maxDay = 6
+      let randomMonth = minMonth+Math.floor(Math.random()*(maxMonth-minMonth+1))
+      let randomDay = minDay+Math.floor(Math.random()*(maxDay-minDay+1))
+      let randomSum = randomDay+randomMonth
+      document.write(`Random month is ${randomMonth}, random day is ${randomDay}, the sum is ${randomSum}`)
+   </script>
+
+</body>
+</html>
